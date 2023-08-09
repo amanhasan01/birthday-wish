@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    background-image: radial-gradient(circle at top left, #3498db, transparent), radial-gradient(circle at top right, #e74c3c, transparent);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  .cake {
+    position: relative;
+    width: 200px;
+    margin-bottom: 50px;
+  }
+  .cake img {
+    width: 100%;
+    height: auto;
+  }
+  .candles {
+    position: absolute;
+    top: -80px;
+    left: 100px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 120px;
+  }
+  .candle {
+    display: flex;
+    align-items: center;
+  }
+  .candle img {
+    width: 43px;
+    height: auto;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  .text {
+    text-align: center;
+    color: #333;
+    display: none;
+  }
+  .text h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 10px;
+  }
+  .text p {
+    font-size: 18px;
+    margin: 0;
+    padding: 5px;
+  }
+  .button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 27px;
+  }
+</style>
+<title>Happy Birthday!</title>
+</head>
+<body>
+  <div class="text">
+    <h1>Happy Birthday!</h1>
+    <p>Wishing you a day filled with joy, laughter, and wonderful memories.</p>
+  </div>
+  <div class="cake">
+    <img src="cake.png" alt="Birthday Cake">
+    <div class="candles">
+      <div class="candle"><img src="R.jpeg" alt="Candle"></div>
+      <div class="candle"><img src="R.jpeg" alt="Candle"></div>
+      <div class="candle"><img src="R.jpeg" alt="Candle"></div>
+      <div class="candle"><img src="R.jpeg" alt="Candle"></div>
+      <div class="candle"><img src="R.jpeg" alt="Candle"></div>
+    </div>
+  </div>
+  <button class="button" onclick="showWish()">Click Me</button>
+  <div class="text" id="wishText">
+    <h1>Wishing you a fantastic birthday!</h1>
+    <p>May your day be filled with joy and celebrations.</p>
+  </div>
+  <script>
+    function showWish() {
+      const wishText = document.getElementById("wishText");
+      wishText.style.display = "block";
+      wishText.style.animation = "fadeIn 2s forwards";
+
+      setTimeout(() => {
+        wishText.style.animation = "fadeOut 2s forwards";
+        setTimeout(() => {
+          wishText.style.display = "none";
+        }, 2000);
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
